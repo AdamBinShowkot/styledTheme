@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from 'react';
+import Card from './components/CardComponents/Card';
+import { ThemeProvider } from 'styled-components';
+import ThemeContext from './components/context/ThemeContext';
+import ContextMain from './components/ContextContent';
 
 function App() {
+  const [theme,switchTheme]=useState("dark");
+  const handleTheme=()=>{
+    switchTheme((state)=>{
+      if(state==="dark"){
+        return "white";
+      }else if(state==="white"){
+        return "dark";
+      }
+    })
+  }
+  //console.log(theme)
+  const themes={
+    mode:theme
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeContext.Provider value={{handleTheme:handleTheme}}>
+        <ThemeProvider theme={themes}>
+          <Card handleTheme={handleTheme}/>
+          {/* <ContextMain/> */}
+        </ThemeProvider>
+      </ThemeContext.Provider>
     </div>
   );
 }
