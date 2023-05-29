@@ -4,6 +4,7 @@ import Card from './components/CardComponents/Card';
 import { ThemeProvider } from 'styled-components';
 import ThemeContext from './components/context/ThemeContext';
 import ContextMain from './components/ContextContent';
+import 'antd/dist/reset.css';
 
 function App() {
   const [theme,switchTheme]=useState("dark");

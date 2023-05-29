@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button,Card } from "antd";
 
 export const Container=styled.div`
     display: flex;
@@ -18,6 +19,9 @@ export const CardContiner=styled.div`
     overflow: hidden;
     display: flex;
     align-items: center;
+`;
+export const MyCard=styled(Card)`
+    background-color:red;
 `;
 
 export const CardTop=styled.div`
@@ -40,6 +44,23 @@ export const CardBottom=styled.div`
     align-items: center;
 `;
 export const CardButton=styled.button`
+    padding: 5px 8px;
+    border:1px solid #236a80;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    background-color: #247a94;
+    color: #fff;
+    &:hover{
+        cursor: pointer;
+        background-color: aqua;
+        border:1px solid aqua;
+        transition: .5s;
+        color: #1e1e1e;
+    }
+`;
+
+
+export const TestBTN=styled(Button)`
     padding: 5px 8px;
     border:1px solid #236a80;
     border-radius: 4px;

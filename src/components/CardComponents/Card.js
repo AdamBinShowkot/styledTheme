@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import '../../assets/css/dark.css'
-import {Container, CardBottom,CardContiner,CardTop,CardButton } from '../StyledComponent/Card.styles'
+import {Container, CardBottom,CardContiner,CardTop,CardButton,TestBTN,MyCard } from '../StyledComponent/Card.styles'
 import { CustomCom } from '../StyledComponent/CustomComponent'
 
 const Card=({handleTheme})=>{
@@ -8,12 +8,16 @@ const Card=({handleTheme})=>{
         <Fragment>
             <Container>
                 <CardContiner>
+                    {/* <MyCard title="TESTT">
+                        KKKK
+                    </MyCard> */}
                     <CardTop>
                         <CardButton
                         onClick={handleTheme}
                         >
                             Switch Theme
                         </CardButton>
+                        {/* <TestBTN>KKK</TestBTN> */}
                     </CardTop>
                     <CardBottom>
                         <CustomCom text="This is Demo Test."/>
